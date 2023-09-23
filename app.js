@@ -5,13 +5,15 @@ const router=require('./routes/aut_routes.js')
 const User=require("./models/auth_model.js")
 const body_parser=require("body-parser")
 const cors=require("cors");
+const question = require('./routes/questions');
+const answer = require('./routes/answers');
 
 const app=express();
 
 
 const startServer= async(req,res) =>{
     try {
-        await mongoose.connect('mongodb+srv://' + userName + ':' + password + '@cluster0.kgtfhjx.mongodb.net/new_db', { useNewUrlParser: true, useUnifiedTopology: true });
+        await mongoose.connect('mongodb://127.0.0.1:27017', { useNewUrlParser: true, useUnifiedTopology: true });
         console.log("Connected to MongoDB");
 
     } catch (error) {
@@ -40,6 +42,9 @@ app.get("/testing",async (req,res)=>{
 });
 app.use(router)
 
-app.listen(3000, () => {
+app.use(question);
+app.use(answer);
+
+app.listen(4000, () => {
     console.log("Server is running on port 3000");
 });
