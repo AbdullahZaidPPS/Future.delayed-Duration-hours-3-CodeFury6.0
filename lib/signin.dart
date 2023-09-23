@@ -2,6 +2,7 @@ import 'package:duck/reuse_widget/reuse_widget.dart';
 import 'package:duck/signup.dart';
 import 'package:duck/utils/color_utils.dart';
 import 'package:flutter/material.dart';
+import 'package:duck/homepage.dart';
 
 class SignInScreen extends StatefulWidget {
   const SignInScreen({Key? key});
@@ -42,13 +43,16 @@ class _SignInScreenState extends State<SignInScreen> {
             child: Column(
               children: <Widget>[
                 Container(
-                  child:Text("LOGIN",style: TextStyle(
-                    color: Color(0xFFFFFFFF), 
-                   fontFamily: 'Mochiy Pop P One',
-                   fontSize: 32.0,
-                   fontStyle: FontStyle.normal,
-                   fontWeight: FontWeight.w400
-                  ),),
+                  child: Text(
+                    "LOGIN",
+                    style: TextStyle(
+                      color: Color(0xFFFFFFFF),
+                      fontFamily: 'Mochiy Pop P One',
+                      fontSize: 32.0,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
                   height: 100,
                   width: 100,
                   decoration: BoxDecoration(
@@ -73,7 +77,14 @@ class _SignInScreenState extends State<SignInScreen> {
                 SizedBox(
                   height: 30,
                 ),
-                signInSignUpButton(context, true, () {}),
+                signInSignUpButton(context, true, () {
+                  Navigator.pushReplacement(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => homepage(), // Replace 'HomePage' with your actual homepage widget
+                    ),
+                  );
+                }),
                 signUpOption(),
               ],
             ),

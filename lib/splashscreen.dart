@@ -1,10 +1,8 @@
-import 'dart:async';
-
-import 'package:duck/homepage.dart';
 import 'package:duck/signin.dart';
-import 'package:duck/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:duck/utils/color_utils.dart';
+import 'package:duck/signup.dart';
+import 'dart:async';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -20,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => SignInScreen(), // Make sure 'homepage' is the correct class name
+          builder: (context) => SignInScreen(), // Make sure 'SignUpScreen' is the correct class name
         ),
       );
     });
@@ -33,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
         decoration: BoxDecoration(
           gradient: LinearGradient(
             colors: [
-             hexStringToColor("fc6e78"),
+              hexStringToColor("fc6e78"),
               hexStringToColor("db4473"),
               hexStringToColor("bf376d"),
             ],
