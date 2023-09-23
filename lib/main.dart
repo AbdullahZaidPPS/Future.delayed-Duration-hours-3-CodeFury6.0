@@ -1,4 +1,4 @@
-import 'package:duck/home.dart';
+
 import 'package:duck/signin.dart';
 import 'package:duck/signup.dart';
 import 'package:duck/splashscreen.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           // useMaterial3: true,
           ),
-      home:  SignInScreen()
+      home:  SplashScreen()
       // SignInScreen(), 
       // SplashScreen(),
     );
