@@ -1,19 +1,5 @@
 const mongoose = require('mongoose');
-const dotenv = require('dotenv');
 
-dotenv.config();
-
-mongoose.connect(process.env.MONGODB_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
-
-mongoose.connection.on('connected', () => {
-  console.log('Connected to MongoDB');
-});
-
-mongoose.connection.on('error', (err) => {
-  console.error(`MongoDB connection error: ${err}`);
-});
+mongoose.connect('mongodb://127.0.0.1:27017/qa-session', { useNewUrlParser: true, useUnifiedTopology: true });
 
 module.exports = mongoose;
