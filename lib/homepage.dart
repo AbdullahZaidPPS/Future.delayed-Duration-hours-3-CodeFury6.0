@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
 
   final List<Widget> _screens = [
     HomePageContent(),
-    challenges(),
+    Challenges(),
     settings(),
     Session(),
     ProfileScreen(),
