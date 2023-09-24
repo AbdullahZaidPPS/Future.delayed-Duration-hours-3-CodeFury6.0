@@ -81,7 +81,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => homepage(), // Replace 'HomePage' with your actual homepage widget
+                      builder: (context) => HomePage(), // Replace 'HomePage' with your actual homepage widget
                     ),
                   );
                 }),
