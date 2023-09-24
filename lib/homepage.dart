@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:duck/Challenges.dart';
+import 'package:duck/ProfileScreen.dart';
+import 'package:duck/session.dart';
+import 'package:duck/settings.dart';
 import 'package:duck/Community.dart';
 
-class homepage extends StatefulWidget {
-  const homepage({Key? key});
+class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<homepage> createState() => _homepageState();
+  _HomePageState createState() => _HomePageState();
 }
 
-class _homepageState extends State<homepage> {
-  List<String> imageUrls = [
-    'https://thewmhionline.com/wp-content/uploads/2021/12/Online-courses-banner.jpg',
-    'https://www.creativeeducation.co.uk/wp-content/uploads/2023/08/Mental-Health-Leads_-Preparing-for-the-Year-Ahead-624x351.jpg',
-    'https://i.ytimg.com/vi/i2h1YrotzOU/maxresdefault.jpg',
-    'https://www.lisboninstitutegmh.org/wp-content/uploads/2022/02/imagem-20211001211442.png',
-  ];
+class _HomePageState extends State<HomePage> {
+  int _currentIndex = 0;
 
-  TextStyle customTextStyle = TextStyle(
-    color: Color(0xFF000000), // Replace with your color code
-    fontFamily: 'Leelawadee', // Replace with your font family
-    fontSize: 20.0,
-    fontStyle: FontStyle.normal,
-    fontWeight: FontWeight.w700,
-  );
+  final List<Widget> _screens = [
+    HomePageContent(),
+    Challenges(),
+    settings(),
+    Session(),
+    ProfileScreen(),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -46,14 +45,18 @@ class _homepageState extends State<homepage> {
           ),
         ),
       ),
-      body: Home(imageUrls: imageUrls, customTextStyle: customTextStyle),
-     bottomNavigationBar: BottomNavigationBar(
+      body: _screens[_currentIndex],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (index) {
+          setState(() {
+            _currentIndex = index;
+          });
+        },
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xFFC63258),
-        //currentIndex: _selectedIndex,
-        //onTap: _onItemTapped,
-        selectedItemColor: Colors.white, // Selected icon color
-        unselectedItemColor: const Color.fromARGB(255, 255, 204, 204), // Unselected icon color
+        selectedItemColor: Colors.white,
+        unselectedItemColor: const Color.fromARGB(255, 255, 204, 204),
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Container(
@@ -63,7 +66,7 @@ class _homepageState extends State<homepage> {
               ),
               child: Icon(
                 Icons.home,
-                color: Colors.white, // Set icon color to white
+                color: Colors.white,
               ),
             ),
             label: 'Home',
@@ -76,10 +79,10 @@ class _homepageState extends State<homepage> {
               ),
               child: Icon(
                 Icons.leaderboard,
-                color: Colors.white, // Set icon color to white
+                color: Colors.white,
               ),
             ),
-            label: 'LeaderBoard',
+            label: 'Challenges',
           ),
           BottomNavigationBarItem(
             icon: Container(
@@ -89,7 +92,7 @@ class _homepageState extends State<homepage> {
               ),
               child: Icon(
                 Icons.settings,
-                color: Colors.white, // Set icon color to white
+                color: Colors.white,
               ),
             ),
             label: 'Settings',
@@ -102,7 +105,7 @@ class _homepageState extends State<homepage> {
               ),
               child: Icon(
                 Icons.sentiment_satisfied_rounded,
-                color: Colors.white, // Set icon color to white
+                color: Colors.white,
               ),
             ),
             label: 'Session',
@@ -115,7 +118,7 @@ class _homepageState extends State<homepage> {
               ),
               child: Icon(
                 Icons.person,
-                color: Colors.white, // Set icon color to white
+                color: Colors.white,
               ),
             ),
             label: 'Profile',
@@ -123,19 +126,24 @@ class _homepageState extends State<homepage> {
         ],
       ),
     );
-    
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({
-    super.key,
-    required this.imageUrls,
-    required this.customTextStyle,
-  });
+class HomePageContent extends StatelessWidget {
+  List<String> imageUrls = [
+    'https://thewmhionline.com/wp-content/uploads/2021/12/Online-courses-banner.jpg',
+    'https://www.creativeeducation.co.uk/wp-content/uploads/2023/08/Mental-Health-Leads_-Preparing-for-the-Year-Ahead-624x351.jpg',
+    'https://i.ytimg.com/vi/i2h1YrotzOU/maxresdefault.jpg',
+    'https://www.lisboninstitutegmh.org/wp-content/uploads/2022/02/imagem-20211001211442.png',
+  ];
 
-  final List<String> imageUrls;
-  final TextStyle customTextStyle;
+  TextStyle customTextStyle = TextStyle(
+    color: Color(0xFF000000),
+    fontFamily: 'Leelawadee',
+    fontSize: 20.0,
+    fontStyle: FontStyle.normal,
+    fontWeight: FontWeight.w700,
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -317,7 +325,7 @@ class Home extends StatelessWidget {
                           children: [
                             Text(
                               'Join Our Community',
-                              style: customTextStyle, // Apply the custom text style here
+                              style: customTextStyle,
                             ),
                             Padding(
                               padding: const EdgeInsets.only(top: 20.0),
@@ -344,9 +352,8 @@ class Home extends StatelessWidget {
                               child: ElevatedButton(
                                 onPressed: () {
                                   Navigator.of(context).push(MaterialPageRoute(
-          builder: (context) => CommunityScreen(),
-        ));
-                                  
+                                    builder: (context) => CommunityScreen(),
+                                  ));
                                 },
                                 style: ElevatedButton.styleFrom(
                                   primary: Color(0xFFBD366D),
@@ -378,6 +385,6 @@ class Home extends StatelessWidget {
 
 void main() {
   runApp(MaterialApp(
-    home: homepage(),
+    home: HomePage(),
   ));
 }

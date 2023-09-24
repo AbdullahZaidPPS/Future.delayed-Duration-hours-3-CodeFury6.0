@@ -34,14 +34,12 @@ class _SignInScreenState extends State<SignInScreen> {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                          homepage(), // Replace 'HomePage' with your actual homepage widget
+                          HomePage(), // Replace 'HomePage' with your actual homepage widget
                     ),
                   );
                 }
               },
-              orElse: () {
-                
-              });
+              orElse: () {});
         },
         builder: (context, state) {
           return Container(

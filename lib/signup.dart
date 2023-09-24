@@ -79,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     context,
                     MaterialPageRoute(
                       builder: (context) =>
-                          homepage(), // Replace 'HomePage' with your actual homepage widget
+                          HomePage(), // Replace 'HomePage' with your actual homepage widget
                     ),
                   );
                 }),
