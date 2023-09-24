@@ -46,240 +46,7 @@ class _homepageState extends State<homepage> {
           ),
         ),
       ),
-      body: Container(
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(left: 15.0, top: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Courses",
-                      style: TextStyle(
-                        color: Color(0xFF000000),
-                        fontFamily: 'Lato',
-                        fontSize: 16.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(
-                height: 280,
-                child: ListView.builder(
-                  itemCount: imageUrls.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) {
-                    return Column(
-                      children: [
-                        Container(
-                          height: 200,
-                          width: 300,
-                          margin: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(10),
-                            boxShadow: [
-                              BoxShadow(
-                                color: Color.fromRGBO(0, 0, 0, 0.25),
-                                offset: Offset(0, 4),
-                                blurRadius: 4,
-                                spreadRadius: 0,
-                              ),
-                            ],
-                            color: Color(0xFFF9E6E7),
-                          ),
-                          child: Image.network(
-                            imageUrls[index],
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10.0, top: 10),
-                          child: Container(
-                            width: 150,
-                            height: 40,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // Action to perform when the button is pressed
-                              },
-                              style: ElevatedButton.styleFrom(
-                                primary: Color(0xFFFF7279),
-                                onPrimary: Colors.white,
-                                padding: EdgeInsets.all(10),
-                              ),
-                              child: Text(
-                                'Explore More',
-                                style: TextStyle(
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    );
-                  },
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Survey",
-                      style: TextStyle(
-                        color: Color(0xFF000000),
-                        fontFamily: 'Lato',
-                        fontSize: 16.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: Row(
-                        children: [
-                          Container(
-                            width: 335,
-                            height: 65,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Color(0xFFFBC15C),
-                            ),
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 10.0, top: 10),
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
-                                    children: [
-                                      Text(
-                                        'Please complete our survey to help us',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                      Text(
-                                        'learn more about you.',
-                                        style: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.only(top: 0.0, right: 8),
-                                    child: Icon(Icons.arrow_forward),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(left: 15.0, top: 10),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "Explore",
-                      style: TextStyle(
-                        color: Color(0xFF000000),
-                        fontFamily: 'Lato',
-                        fontSize: 16.0,
-                        fontStyle: FontStyle.normal,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 8),
-                      child: Container(
-                        width: 335,
-                        height: 173,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(255, 250, 177, 189),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.only(left: 10.0, top: 20),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'Join Our Community',
-                                style: customTextStyle, // Apply the custom text style here
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 20.0),
-                                child: Text(
-                                  'Uplift your mental health,',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 5.0),
-                                child: Text(
-                                  'connect with understanding peers',
-                                  style: TextStyle(
-                                    fontSize: 14,
-                                    color: Colors.black,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.only(top: 10.0),
-                                child: ElevatedButton(
-                                  onPressed: () {
-                                    Navigator.of(context).push(MaterialPageRoute(
-            builder: (context) => CommunityScreen(),
-          ));
-                                    
-                                  },
-                                  style: ElevatedButton.styleFrom(
-                                    primary: Color(0xFFBD366D),
-                                    onPrimary: Colors.white,
-                                    padding: EdgeInsets.all(10),
-                                  ),
-                                  child: Text(
-                                    'Join Now',
-                                    style: TextStyle(
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-      ),
+      body: Home(imageUrls: imageUrls, customTextStyle: customTextStyle),
      bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         backgroundColor: Color(0xFFC63258),
@@ -357,6 +124,255 @@ class _homepageState extends State<homepage> {
       ),
     );
     
+  }
+}
+
+class Home extends StatelessWidget {
+  const Home({
+    super.key,
+    required this.imageUrls,
+    required this.customTextStyle,
+  });
+
+  final List<String> imageUrls;
+  final TextStyle customTextStyle;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      child: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0, top: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Courses",
+                    style: TextStyle(
+                      color: Color(0xFF000000),
+                      fontFamily: 'Lato',
+                      fontSize: 16.0,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 280,
+              child: ListView.builder(
+                itemCount: imageUrls.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Column(
+                    children: [
+                      Container(
+                        height: 200,
+                        width: 300,
+                        margin: EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          boxShadow: [
+                            BoxShadow(
+                              color: Color.fromRGBO(0, 0, 0, 0.25),
+                              offset: Offset(0, 4),
+                              blurRadius: 4,
+                              spreadRadius: 0,
+                            ),
+                          ],
+                          color: Color(0xFFF9E6E7),
+                        ),
+                        child: Image.network(
+                          imageUrls[index],
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10.0, top: 10),
+                        child: Container(
+                          width: 150,
+                          height: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                          ),
+                          child: ElevatedButton(
+                            onPressed: () {
+                              // Action to perform when the button is pressed
+                            },
+                            style: ElevatedButton.styleFrom(
+                              primary: Color(0xFFFF7279),
+                              onPrimary: Colors.white,
+                              padding: EdgeInsets.all(10),
+                            ),
+                            child: Text(
+                              'Explore More',
+                              style: TextStyle(
+                                fontSize: 16,
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Survey",
+                    style: TextStyle(
+                      color: Color(0xFF000000),
+                      fontFamily: 'Lato',
+                      fontSize: 16.0,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Row(
+                      children: [
+                        Container(
+                          width: 335,
+                          height: 65,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Color(0xFFFBC15C),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.only(left: 10.0, top: 10),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      'Please complete our survey to help us',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                    Text(
+                                      'learn more about you.',
+                                      style: TextStyle(
+                                        fontSize: 14,
+                                        color: Colors.black,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 0.0, right: 8),
+                                  child: Icon(Icons.arrow_forward),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0, top: 10),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    "Explore",
+                    style: TextStyle(
+                      color: Color(0xFF000000),
+                      fontFamily: 'Lato',
+                      fontSize: 16.0,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(top: 8),
+                    child: Container(
+                      width: 335,
+                      height: 173,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(10),
+                        color: Color.fromARGB(255, 250, 177, 189),
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.only(left: 10.0, top: 20),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Join Our Community',
+                              style: customTextStyle, // Apply the custom text style here
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 20.0),
+                              child: Text(
+                                'Uplift your mental health,',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 5.0),
+                              child: Text(
+                                'connect with understanding peers',
+                                style: TextStyle(
+                                  fontSize: 14,
+                                  color: Colors.black,
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 10.0),
+                              child: ElevatedButton(
+                                onPressed: () {
+                                  Navigator.of(context).push(MaterialPageRoute(
+          builder: (context) => CommunityScreen(),
+        ));
+                                  
+                                },
+                                style: ElevatedButton.styleFrom(
+                                  primary: Color(0xFFBD366D),
+                                  onPrimary: Colors.white,
+                                  padding: EdgeInsets.all(10),
+                                ),
+                                child: Text(
+                                  'Join Now',
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
 

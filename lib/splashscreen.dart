@@ -1,8 +1,11 @@
+import 'package:duck/bloc/auth_bloc.dart';
 import 'package:duck/signin.dart';
 import 'package:flutter/material.dart';
 import 'package:duck/utils/color_utils.dart';
 import 'package:duck/signup.dart';
 import 'dart:async';
+
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -18,7 +21,10 @@ class _SplashScreenState extends State<SplashScreen> {
       Navigator.pushReplacement(
         context,
         MaterialPageRoute(
-          builder: (context) => SignInScreen(), // Make sure 'SignUpScreen' is the correct class name
+          builder: (context) => BlocProvider(
+            create: (context) => AuthBloc(),
+            child: SignInScreen(),
+          ), // Make sure 'SignUpScreen' is the correct class name
         ),
       );
     });
