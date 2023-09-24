@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:duck/Community.dart';
 
 class homepage extends StatefulWidget {
   const homepage({Key? key});
@@ -12,7 +13,7 @@ class _homepageState extends State<homepage> {
     'https://thewmhionline.com/wp-content/uploads/2021/12/Online-courses-banner.jpg',
     'https://www.creativeeducation.co.uk/wp-content/uploads/2023/08/Mental-Health-Leads_-Preparing-for-the-Year-Ahead-624x351.jpg',
     'https://i.ytimg.com/vi/i2h1YrotzOU/maxresdefault.jpg',
-    'https://mentallyhealthybanners.org.uk/media/2696/smhl-twitter-linkedin-18-aug.png',
+    'https://www.lisboninstitutegmh.org/wp-content/uploads/2022/02/imagem-20211001211442.png',
   ];
 
   TextStyle customTextStyle = TextStyle(
@@ -249,7 +250,10 @@ class _homepageState extends State<homepage> {
                                 padding: const EdgeInsets.only(top: 10.0),
                                 child: ElevatedButton(
                                   onPressed: () {
-                                    // Action to perform when the button is pressed
+                                    Navigator.of(context).push(MaterialPageRoute(
+            builder: (context) => CommunityScreen(),
+          ));
+                                    
                                   },
                                   style: ElevatedButton.styleFrom(
                                     primary: Color(0xFFBD366D),
