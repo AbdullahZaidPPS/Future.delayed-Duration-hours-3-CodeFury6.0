@@ -1,4 +1,6 @@
 # CodeFury6.0
+Created an App "MoodEz" where we Incorporating these features into your mental health app can create a holistic and engaging platform for users to improve their mental health, connect with others, and track their progress over time. Additionally, the thoughtful use of calming colors and an intuitive user interface can enhance the overall user experience.
+
 User Authentication: The app provides a secure user authentication system to ensure that only registered users can access its features. Users can create an account or log in with their credentials.
 
 Home Page with User-Friendly UI: The app features a visually appealing and user-friendly home page design. The design elements are chosen to be soothing and calming, promoting a positive mental state for users.
@@ -17,4 +19,3 @@ Leaderboard: Users can participate in challenges and earn points for completing 
 
 User Profiles: Each user has a personalized profile page that displays their scores, achievements, and tags indicating their areas of interest within the mental health and well-being context.
 
-Incorporating these features into your mental health app can create a holistic and engaging platform for users to improve their mental health, connect with others, and track their progress over time. Additionally, the thoughtful use of calming colors and an intuitive user interface can enhance the overall user experience.
